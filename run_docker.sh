@@ -36,7 +36,8 @@ else
     -v /dev/nvidiactl:/dev/nvidiactl \
     -v /dev/nvidia-modeset:/dev/nvidia-modeset \
     -v /dev/nvidia-modeset:/dev/nvidia-modeset \
-    -v /home/user/Data/Datasets/autopilot_net/model.pt:/tmp/autopilot_neural_network/model.pt \
+    -v ~/autopilot_neural_network/model.pt:/tmp/autopilot_neural_network/model.pt \
+    -v ~/autopilot_neural_network/dataset:/tmp/autopilot_neural_network/dataset \
     $IMAGE_NAME:$IMAGE_TAG \
     bash -i
 fi
