@@ -55,6 +55,11 @@ RUN useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} && \
     echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} && \
     chmod 0440 /etc/sudoers.d/${USERNAME}
 
+# Ceate dataset and model directories
+RUN mkdir -p /tmp/autopilot_neural_network && \
+    chown -R ${USER_UID}:${USER_GID} /tmp/autopilot_neural_network && \
+    chmod 775 /tmp/autopilot_neural_network
+
 # Set environment variables and switch to the new user
 ENV HOME=/home/${USERNAME}
 ENV USER=${USERNAME}
