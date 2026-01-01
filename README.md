@@ -77,6 +77,39 @@ colcon build
 
 After a successful build, the system is ready to be used.
 
+### 🐳 Docker Setup
+
+If you prefer not to set up the project directly on your Linux system, you can use **[Docker](https://www.docker.com/)** instead. It ensures a consistent environment and simplifies dependency management across different systems. Make sure Docker is properly installed and running on your machine before proceeding with the build and execution steps.
+
+
+#### 🛠️ Build
+
+To simplify the setup, a helper script is provided to build the Docker image. Navigate to the project directory and run the ./`build_docker.sh` script:
+
+```bash
+cd <path_to_the_project_directory>
+
+./build_docker.sh
+```
+
+#### 🏃 Run
+
+To run the project, it is necessary to configure Docker volumes for both the dataset directory and the trained model file. This can be done by creating a folder named `autopilot_neural_network` in your home directory, which will be mounted automatically, or by manually editing the `run_docker.sh` script to adjust the volume paths as needed.
+
+In summary, for a quick setup:
+
+```bash
+mkdir ~/autopilot_neural_network
+
+cd <path_to_the_project_directory>
+
+./run_docker.sh
+```
+
+When this script is executed, it starts the container and opens an interactive shell inside the Docker environment. From this shell, you can follow the next steps in the Usage section to collect the dataset, train the model, or run inference.
+
+However, no changes are required in `autopilot_neural_network/config/parameters.yaml` regarding the model path or the dataset directory. The Docker setup is already configured to use `/tmp/autopilot_neural_network/model.pt` for the model file and `/tmp/autopilot_neural_network/dataset` for the dataset, which are properly mapped to the host through Docker volumes.
+
 ## 🚀 Usage
 
 ### 🗂️ Data Collection
