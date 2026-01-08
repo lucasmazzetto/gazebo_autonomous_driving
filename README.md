@@ -4,9 +4,13 @@ This repository provides an imitation learning training and inference package fo
 
 ![autonomous-driving](https://github.com/user-attachments/assets/49999351-1994-48db-906b-f1adadccbc3a)
 
+For the complete documentation of this project’s development, including simulation setup, data collection, and training workflow, please refer to the full article here: 
+
+[Autonomous Driving Vehicle Simulation](https://workabotic.com/2026/autonomous-driving-vehicle-simulation/)
+
 A pretrained model is available for download if you want to quickly evaluate the system or skip the training step entirely. The model was trained in simulation using manual driving data collected in Gazebo and can be used directly with the provided autopilot inference node:
 
-**[Download pretrained model (model.pt)](https://huggingface.co/lucasmazzetto/autopilot_neural_network/resolve/main/model.pt)**
+[Download pretrained model (model.pt)](https://huggingface.co/lucasmazzetto/autopilot_neural_network/resolve/main/model.pt)
 
 In the next sections, you’ll find detailed instructions covering installation, environment setup, data collection, training, inference, and configuration.
 
